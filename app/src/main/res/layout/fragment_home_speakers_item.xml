@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:src="@android:drawable/ic_dialog_info"
+        android:src="@drawable/ic_arrow_forward"
         android:tint="@color/colorAccent"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
 </RelativeLayout>
