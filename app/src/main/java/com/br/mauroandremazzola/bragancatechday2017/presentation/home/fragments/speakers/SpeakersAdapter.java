@@ -25,11 +25,21 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.Speake
 
     //region FIELDS
     private List<Speaker> speakers;
+    private SpeakerListener listener;
     //endregion
 
     //region CONSTRUCT
-    public SpeakersAdapter(List<Speaker> speakers) {
+    public SpeakersAdapter() {
+    }
+    //endregion
+
+    //region PROPERTIES
+    public void setSpeakers(List<Speaker> speakers) {
         this.speakers = speakers;
+    }
+
+    public void setListener(SpeakerListener listener) {
+        this.listener = listener;
     }
     //endregion
 
@@ -80,7 +90,10 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.Speake
         //region PACKAGE METHODS
         @OnClick(R.id.fragment_home_speakers_item_rel_root)
         void onGoClick() {
-
+            if (listener != null) {
+                Speaker speaker = speakers.get(getAdapterPosition());
+                listener.onSpeakerClick(speaker);
+            }
         }
 
         void bindView(Speaker speaker) {
@@ -92,6 +105,12 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.Speake
         }
         //endregion
         //endregion
+    }
+    //endregion
+
+    //region INTERFACES
+    interface SpeakerListener {
+        void onSpeakerClick(Speaker speaker);
     }
     //endregion
 }

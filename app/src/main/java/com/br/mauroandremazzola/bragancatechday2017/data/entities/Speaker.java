@@ -1,15 +1,18 @@
 package com.br.mauroandremazzola.bragancatechday2017.data.entities;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Alex on 18/05/2017.
  */
+@Parcel
 public class Speaker {
 
     //region FIELDS
-    private int id;
-    private String name;
-    private String email;
-    private int resIdImage;
+    int id;
+    String name;
+    String email;
+    int resIdImage;
     //endregion
 
     //region CONSTRUCT

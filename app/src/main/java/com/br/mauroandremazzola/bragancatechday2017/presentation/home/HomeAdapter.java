@@ -25,7 +25,7 @@ public class HomeAdapter extends FragmentPagerAdapter {
     //region CONSTRUCT
     public HomeAdapter(FragmentManager fm) {
         super(fm);
-        this.titles = new String[]{"Sobre", "Palestrantes", "Parceiros", "Vídeos"};
+        this.titles = new String[]{"sobre", "palestrantes", "parceiros", "vídeos"};
     }
     //endregion
 

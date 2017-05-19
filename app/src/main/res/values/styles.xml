@@ -20,6 +20,8 @@
 
     <style name="TextTab" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="ImageButtonBorderless" parent="Widget.AppCompat.Button.Borderless">
