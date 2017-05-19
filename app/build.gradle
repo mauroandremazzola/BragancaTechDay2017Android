@@ -2,6 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'play'
+            keyPassword 'android'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
     defaultConfig {
