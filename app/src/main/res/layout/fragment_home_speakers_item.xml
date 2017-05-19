@@ -37,6 +37,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:src="@android:drawable/ic_dialog_info"
-        android:tint="@color/colorAccent" />
+        android:tint="@color/colorAccent"
+        android:visibility="gone"/>
 
 </RelativeLayout>
