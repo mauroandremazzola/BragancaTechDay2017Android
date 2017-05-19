@@ -38,6 +38,6 @@
         android:layout_centerVertical="true"
         android:src="@drawable/ic_arrow_forward"
         android:tint="@color/colorAccent"
-        android:visibility="visible"/>
+        android:visibility="gone"/>
 
 </RelativeLayout>
