@@ -10,5 +10,8 @@ import java.util.List;
 
 public interface AboutView {
 
+    void onMapsUriLoaded(String uri, String exUri);
+
+    void onWazeUriLoaded(String uri, String exUri);
 
 }
