@@ -1,5 +1,7 @@
 package com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.partners;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -51,7 +53,15 @@ public class PartnersFragment extends Fragment implements PartnersView {
     //region OVERRIDES METHODS
     @Override
     public void loadSPartners(List<Partner> partners) {
-        rcvPartners.setAdapter(new PartnersAdapter(partners));
+        PartnersAdapter partnersAdapter = new PartnersAdapter(partners);
+        partnersAdapter.setListener(new PartnersAdapter.Listener() {
+            @Override
+            public void onItemClick(Partner partner) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(partner.getSite()));
+                startActivity(intent);
+            }
+        });
+        rcvPartners.setAdapter(partnersAdapter);
     }
 
     //endregion
@@ -61,6 +71,7 @@ public class PartnersFragment extends Fragment implements PartnersView {
         rcvPartners.setLayoutManager(new LinearLayoutManager(getContext()));
         rcvPartners.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
     }
+
     //endregion
     //endregion
 

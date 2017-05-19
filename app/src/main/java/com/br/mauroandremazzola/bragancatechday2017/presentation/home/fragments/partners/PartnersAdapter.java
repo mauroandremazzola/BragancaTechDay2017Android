@@ -4,9 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import com.br.mauroandremazzola.bragancatechday2017.R;
 import com.br.mauroandremazzola.bragancatechday2017.data.entities.Partner;
@@ -16,20 +15,28 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by mauroandremazzola on 19/05/17.
  */
 
-public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.PartnerViewHolder> {
+class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.PartnerViewHolder> {
 
     //region FIELDS
     private List<Partner> partners;
+    private Listener listener;
     //endregion
 
     //region CONSTRUCT
-    public PartnersAdapter(List<Partner> partners) {
+    PartnersAdapter(List<Partner> partners) {
         this.partners = partners;
+    }
+    //endregion
+
+    //region PROPERTIES
+    void setListener(Listener listener) {
+        this.listener = listener;
     }
     //endregion
 
@@ -65,10 +72,12 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.Partne
 
         @BindView(R.id.fragment_home_partners_item_logo)
         ImageView imgLogo;
+
+        Partner partner;
         //endregion
 
         //region CONSTRUCT
-        public PartnerViewHolder(View itemView) {
+        PartnerViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
@@ -78,6 +87,8 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.Partne
         //region PACKAGE METHODS
 
         void bindView(Partner partner) {
+            this.partner = partner;
+
             Glide.with(itemView.getContext())
                     .load(partner.getResIdImage())
                     .into(imgBackground);
@@ -86,8 +97,21 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.Partne
                     .load(partner.getResIdImage())
                     .into(imgLogo);
         }
+
+        @OnClick(R.id.fragment_home_partners_item_logo)
+        void onItemClick(){
+            if (listener != null) {
+                listener.onItemClick(partner);
+            }
+        }
         //endregion
         //endregion
     }
     //endregion
+
+    interface Listener {
+
+        void onItemClick(Partner partner);
+
+    }
 }

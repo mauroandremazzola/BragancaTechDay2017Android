@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.AboutFragment;
-import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.PartnersFragment;
+import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.about.AboutFragment;
+import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.partners.PartnersFragment;
 import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.speakers.SpeakersFragment;
-import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.VideosFragment;
+import com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.videos.VideosFragment;
 
 /**
  * Created by Alex on 18/05/2017.
