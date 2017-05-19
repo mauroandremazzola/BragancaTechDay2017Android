@@ -22,4 +22,11 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="ImageButtonBorderless" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:maxWidth">0dp</item>
+        <item name="android:maxHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
 </resources>
