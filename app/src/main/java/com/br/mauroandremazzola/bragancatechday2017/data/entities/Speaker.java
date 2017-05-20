@@ -2,6 +2,8 @@ package com.br.mauroandremazzola.bragancatechday2017.data.entities;
 
 import org.parceler.Parcel;
 
+import java.util.Calendar;
+
 /**
  * Created by Alex on 18/05/2017.
  */
@@ -11,17 +13,20 @@ public class Speaker {
     //region FIELDS
     int id;
     String name;
-    String email;
+    String description;
+    String lecture;
+    String urlLinkedin;
+    Calendar hour;
     int resIdImage;
     //endregion
 
     //region CONSTRUCT
     public Speaker() { }
 
-    public Speaker(int id, String name, String email, int resIdImage) {
+    public Speaker(int id, String name, String urlLinkedin, int resIdImage) {
         this.id = id;
         this.name = name;
-        this.email = email;
+        this.urlLinkedin = urlLinkedin;
         this.resIdImage = resIdImage;
     }
     //endregion
@@ -43,12 +48,36 @@ public class Speaker {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescription() {
+        return description;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLecture() {
+        return lecture;
+    }
+
+    public void setLecture(String lecture) {
+        this.lecture = lecture;
+    }
+
+    public String getUrlLinkedin() {
+        return urlLinkedin;
+    }
+
+    public void setUrlLinkedin(String urlLinkedin) {
+        this.urlLinkedin = urlLinkedin;
+    }
+
+    public Calendar getHour() {
+        return hour;
+    }
+
+    public void setHour(Calendar hour) {
+        this.hour = hour;
     }
 
     public int getResIdImage() {

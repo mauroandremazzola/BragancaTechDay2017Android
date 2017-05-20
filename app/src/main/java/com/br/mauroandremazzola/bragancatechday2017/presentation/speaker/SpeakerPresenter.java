@@ -25,6 +25,13 @@ public class SpeakerPresenter {
 
         view.loadSpeaker(speaker);
     }
+
+    public void linkedinClick() {
+        String url = speaker.getUrlLinkedin();
+        if (!url.startsWith("http://") && !url.startsWith("https://")) url = "http://" + url;
+
+        view.openLinkedin(url);
+    }
     //endregion
     //endregion
 }

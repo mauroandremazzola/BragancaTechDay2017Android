@@ -8,6 +8,8 @@ local.properties
 .gradle/
 
 # User-specific configurations
+/.idea/workspace.xml
+/.idea/libraries
 .idea
 .idea/copyright/profiles_settings.xml
 .idea/libraries/
@@ -37,3 +39,5 @@ Thumbs.db
 
 #Project backups
 projectFilesBackup/
+
+.externalNativeBuild

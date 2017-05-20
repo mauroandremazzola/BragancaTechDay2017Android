@@ -8,4 +8,6 @@ import com.br.mauroandremazzola.bragancatechday2017.data.entities.Speaker;
 public interface SpeakerView {
 
     void loadSpeaker(Speaker speaker);
+
+    void openLinkedin(String url);
 }
