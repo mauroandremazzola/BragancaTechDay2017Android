@@ -6,19 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.util.Pair;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.transition.AutoTransition;
-import android.transition.ChangeImageTransform;
 import android.transition.Explode;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.TextView;
 
 import com.br.mauroandremazzola.bragancatechday2017.R;
@@ -87,8 +81,18 @@ public class SpeakersFragment extends Fragment implements SpeakersView {
 
     private void setupTransition() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getActivity().getWindow().setEnterTransition(new Explode());
-            getActivity().getWindow().setExitTransition(new Explode());
+            Explode explodeEnter = new Explode();
+            explodeEnter.setDuration(300);
+            explodeEnter.addTarget(R.id.activity_speaker_appbar);
+            explodeEnter.addTarget(android.R.id.statusBarBackground);
+            explodeEnter.addTarget(android.R.id.navigationBarBackground);
+            Explode explodeExit = new Explode();
+            explodeExit.addTarget(R.id.activity_speaker_appbar);
+            explodeExit.addTarget(android.R.id.statusBarBackground);
+            explodeExit.addTarget(android.R.id.navigationBarBackground);
+            explodeExit.setDuration(300);
+            getActivity().getWindow().setEnterTransition(explodeEnter);
+            getActivity().getWindow().setExitTransition(explodeExit);
         }
     }
 

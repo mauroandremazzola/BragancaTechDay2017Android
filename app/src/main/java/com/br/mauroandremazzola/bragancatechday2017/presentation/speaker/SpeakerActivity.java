@@ -58,8 +58,6 @@ public class SpeakerActivity extends AppCompatActivity implements SpeakerView {
     //region LIFECYCLE
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setupTransition();
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_speaker);
@@ -78,13 +76,13 @@ public class SpeakerActivity extends AppCompatActivity implements SpeakerView {
     //region OVERRIDES METHODS
     @Override
     public void onBackPressed() {
-        finishActivity();
+        supportFinishAfterTransition();
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finishActivity();
+            supportFinishAfterTransition();
             return true;
         }
 
@@ -135,13 +133,19 @@ public class SpeakerActivity extends AppCompatActivity implements SpeakerView {
 
     private void setupTransition() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setEnterTransition(new Explode());
-            getWindow().setExitTransition(new Explode());
+            Explode explodeEnter = new Explode();
+            explodeEnter.setDuration(500);
+            explodeEnter.addTarget(R.id.activity_speaker_appbar);
+            explodeEnter.addTarget(android.R.id.statusBarBackground);
+            explodeEnter.addTarget(android.R.id.navigationBarBackground);
+            Explode explodeExit = new Explode();
+            explodeExit.addTarget(R.id.activity_speaker_appbar);
+            explodeExit.addTarget(android.R.id.statusBarBackground);
+            explodeExit.addTarget(android.R.id.navigationBarBackground);
+            explodeExit.setDuration(300);
+            getWindow().setEnterTransition(explodeEnter);
+            getWindow().setExitTransition(explodeExit);
         }
-    }
-
-    private void finishActivity() {
-        supportFinishAfterTransition();
     }
     //endregion
     //endregion
