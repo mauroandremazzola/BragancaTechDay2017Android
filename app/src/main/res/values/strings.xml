@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">Braganca Tech Day 2017</string>
 
-    <string name="info">Bragança Tech Day é um evento voltado para o público em geral, e entusiastas da área de Tecnologia da Informação. \n\n
-
-        Mesmo com a recessão que o Brasil se encontra, observamos que a área de TI é uma das menos afetadas. Por isso convidamos você para participar e descobrir como ingressar nesse meio com vários profissionais da área. \n\n
-
-        As palestras/talks serão voltadas para o desenvolvimento mobile (iOS, android, xamarin, web-services) entre outros. \n\n
-
-        O evento é gratuito e acontecerá dia 20 de maio , na Fatec - Faculdade de Tecnologia de Bragança Paulista. Para participar você deverá fazer a inscrição aqui no site e contribuir com 1 KG de alimento não perecível, que será doado. </string>
+    <string name="info"><![CDATA[<p>Bragança Tech Day é um evento voltado para o público em geral, e entusiastas da área de Tecnologia da Informação.</p>
+        <p>Mesmo com a recessão que o Brasil se encontra, observamos que a área de TI é uma das menos afetadas. Por isso convidamos você para participar e descobrir como ingressar nesse meio com vários profissionais da área.</p>
+        <p>As palestras/talks serão voltadas para o desenvolvimento mobile (iOS, android, xamarin, web-services) entre outros.</p>
+        <p>O evento é gratuito e acontecerá dia 20 de maio , na Fatec - Faculdade de Tecnologia de Bragança Paulista. Para participar você deverá fazer a inscrição aqui no site e contribuir com 1 KG de alimento não perecível, que será doado.</p>]]></string>
 
     <string name="videos_info">Os videos do evento estarão disponiveis aqui</string>
 
