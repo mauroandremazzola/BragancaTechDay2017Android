@@ -11,7 +11,8 @@
         android:id="@+id/fragment_home_speakers_item_img_speaker"
         android:layout_width="@dimen/speaker_image_size"
         android:layout_height="@dimen/speaker_image_size"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:transitionName="@string/transition_speaker_image" />
 
     <TextView
         android:id="@+id/fragment_home_speakers_item_tvw_speaker"
@@ -38,6 +39,6 @@
         android:layout_centerVertical="true"
         android:src="@drawable/ic_arrow_forward"
         android:tint="@color/colorAccent"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </RelativeLayout>

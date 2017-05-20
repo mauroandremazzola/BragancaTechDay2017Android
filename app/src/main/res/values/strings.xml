@@ -17,4 +17,6 @@
 
     <string name="como_chegar">como chegar:</string>
 
+    <string name="transition_speaker_image" translatable="false">speaker_image</string>
+
 </resources>
