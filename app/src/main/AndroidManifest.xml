@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".presentation.home.HomeActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="sensorPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".presentation.speaker.SpeakerActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="sensorPortrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
     </application>

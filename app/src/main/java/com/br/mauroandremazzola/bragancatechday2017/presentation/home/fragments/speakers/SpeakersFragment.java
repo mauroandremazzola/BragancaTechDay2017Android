@@ -1,15 +1,25 @@
 package com.br.mauroandremazzola.bragancatechday2017.presentation.home.fragments.speakers;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.AutoTransition;
+import android.transition.ChangeImageTransform;
+import android.transition.Explode;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.TextView;
 
 import com.br.mauroandremazzola.bragancatechday2017.R;
 import com.br.mauroandremazzola.bragancatechday2017.data.entities.Speaker;
@@ -21,6 +31,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Alex on 18/05/2017.
@@ -44,6 +55,7 @@ public class SpeakersFragment extends Fragment implements SpeakersView {
         ButterKnife.bind(this, view);
 
         setupView();
+        setupTransition();
         setupAdapter();
 
         presenter = new SpeakersPresenter(this);
@@ -73,14 +85,26 @@ public class SpeakersFragment extends Fragment implements SpeakersView {
         rcvSpeakers.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
     }
 
+    private void setupTransition() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getActivity().getWindow().setEnterTransition(new Explode());
+            getActivity().getWindow().setExitTransition(new Explode());
+        }
+    }
+
     private void setupAdapter() {
         adapter = new SpeakersAdapter();
         adapter.setListener(new SpeakersAdapter.SpeakerListener() {
             @Override
-            public void onSpeakerClick(Speaker speaker) {
+            public void onSpeakerClick(CircleImageView imgSpeaker, TextView tvwSpeaker, Speaker speaker) {
                 Intent intent = new Intent(getActivity(), SpeakerActivity.class);
                 intent.putExtra(SpeakerActivity.EXTRA_SPEAKER, Parcels.wrap(speaker));
-                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imgSpeaker, getString(R.string.transition_speaker_image));
+                    startActivity(intent, options.toBundle());
+                } else {
+                    startActivity(intent);
+                }
             }
         });
     }

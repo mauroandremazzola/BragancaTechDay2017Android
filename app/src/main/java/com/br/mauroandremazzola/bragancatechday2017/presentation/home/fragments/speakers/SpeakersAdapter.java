@@ -92,7 +92,7 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.Speake
         void onGoClick() {
             if (listener != null) {
                 Speaker speaker = speakers.get(getAdapterPosition());
-                listener.onSpeakerClick(speaker);
+                listener.onSpeakerClick(imgSpeaker, tvwSpeaker, speaker);
             }
         }
 
@@ -110,7 +110,7 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.Speake
 
     //region INTERFACES
     interface SpeakerListener {
-        void onSpeakerClick(Speaker speaker);
+        void onSpeakerClick(CircleImageView imgSpeaker, TextView tvwSpeaker, Speaker speaker);
     }
     //endregion
 }
