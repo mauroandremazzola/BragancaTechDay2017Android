@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -14,6 +15,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp" />
 
         <TextView
@@ -22,6 +25,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/info_event_day"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
         <TextView
@@ -30,6 +34,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/info_event_location"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
         <TextView
@@ -38,12 +43,15 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/como_chegar"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageButton
@@ -51,26 +59,29 @@
                 style="@style/ImageButtonBorderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_google_maps" />
 
             <ImageButton
                 android:id="@+id/fragment_home_about_img_waze"
                 style="@style/ImageButtonBorderless"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_waze" />
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/fragment_home_about_tvw_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="@string/info"
-            android:textSize="17sp" />
+            android:layout_marginTop="10dp"
+            android:gravity="fill"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            tools:text="@string/info" />
 
     </LinearLayout>
 
