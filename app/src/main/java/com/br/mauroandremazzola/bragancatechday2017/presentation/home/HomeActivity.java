@@ -38,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         setupToolbar();
         setupViewPager();
     }
+
     //endregion
 
     //region METHODS
